@@ -6,9 +6,11 @@ tags: [gunicorn, uwsgi]
 Gunicorn 和 uwsgi 都是实现了 wsgi 通信协议的server，都提供了 pre-fork 方式增加 server 并发处理能力。
 现在对其做一个简单的性能测试对比，以便更好的在两者间做出选择。
 
+<!-- more --> 
+
 测试机器性能：
 
-+ CPU：Intel® Core™ i5-4200U CPU @ 1.60GHz × 4 
++ CPU：Intel® Core™ i5-4200U CPU @ 1.60GHz × 4
 + RAM：８GB
 + OS：ubuntu 14.04 TLS 64bit
 

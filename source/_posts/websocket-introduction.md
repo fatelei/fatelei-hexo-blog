@@ -7,6 +7,8 @@ tags: [websocket]
 WebSocket 是 HTML5 提供的在单个 TCP 连接下实现全双工的通信，IETF 标准文档为 [RFC6445](https://tools.ietf.org/html/rfc6455)。
 WebsocketAPI 也被 W3C 定为标准。
 
+<!-- more --> 
+
 在 WebSocket 之前，传统的要实现 browser - server 实时推送技术，通常使用 long-poll 技术，就是 client 不断的向 server 请求数据，每次 client 都要重新发起一个 *HTTP Request*，并且 *HTTP Header* 通常会很大，但是数据部分则是很小的，这样做的缺点也是很明显的，大大的浪费了带宽资源。
 
 而随着 WebSocket 的出现，很方便的解决实时推送的问题，通常 client 和 server 只需要进行一次握手，就可以建立一条全双工的通信通道。
@@ -62,7 +64,7 @@ ws.on('message', function(data, flags) {
 + 然后 Server 对这条 WebSocket 的握手请求，首先响应 TCP 的 ack，然后再发送 hankshake 成功的信息
 
     ![server_handshake_response](/images/server_handshake_res.png)
-    
+
 +  在建立 WebSocket 连接之后，开始了通信
 
     ![websocket](/images/websocket.png)
@@ -85,4 +87,3 @@ function generateSecWebSocketAccept(key) {
 console.log(generateSecWebSocketAccept('dGhlIHNhbXBsZSBub25jZQ=='));
 // print s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 ```
-

@@ -6,6 +6,8 @@ tags: [hoisted, JavaScript]
 在很多语言如果是使用未定义的变量，通常会造成编译错误或者运行时抛出异常。
 而对于JavaScript，则不会出现问题。下面的代码你拿去运行完全没有问题：
 
+<!-- more --> 
+
 ```
 function test() {
   alert(name);

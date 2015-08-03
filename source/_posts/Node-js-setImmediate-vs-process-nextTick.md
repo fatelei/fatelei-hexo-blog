@@ -6,6 +6,8 @@ tags: [Node.js, setImmediate, process.nextTick]
 在Node.js中，setImmediate和process.nextTick的使用，经常会有一些疑惑，
 	两个函数的执行究竟有什么区别，下面就来一探究竟吧。
 
+<!-- more --> 
+
 	先准备两段代码：test_setimmediate.js 和 test_process_nexttick.js
 
 test_setimmediate.js
@@ -96,7 +98,7 @@ setTimeout(function () {
 	callback函数的执行顺序是按照进入队列的顺序执行，即FIFO。
 
 	两者的区别是：
-	
+
 	1. process.nextTick
 
 	process.nextTick中callback队列是在每次进入Node.js的Event I/O Loop之前会被
@@ -106,18 +108,18 @@ setTimeout(function () {
 	A -> B -> C -> D -> E -> F -> G -> setTimeout。
 
 	2. setImmediate
-	
+
 	setImmediate中的callback队列则是在每次Node.js的Event I/O Loop中被
 	iteration。这样做的好处是：不会让I/O产生straved。
-	
-	在setImmediate中scheduled的function的执行总是在I/O events的callbacks之后。 
+
+	在setImmediate中scheduled的function的执行总是在I/O events的callbacks之后。
 	所以虽然setImmediate中scheduled的callbacks的执行顺序可以保证，但是在
 	这些“immediated”的callbacks中的执行中，会插入其它I/O events的回调函数被执行。
 
 	所以在test_setimmediate.js的执行顺序中，setTimeout中delayed的function，会
 	插入到setImmediate的执行顺序中。出现"Timeout out"的打印出现类似随机打印的感觉。
 
-	
+
 	嗯，就写到这儿吧。
 
 
@@ -125,4 +127,3 @@ setTimeout(function () {
 
 + [setImmediate](http://nodejs.org/api/timers.html#timers_setimmediate_callback_arg)
 + [process.nextTick](http://nodejs.org/api/process.html#process_process_nexttick_callback)
-
