@@ -5,6 +5,8 @@ tags: [CSS, Animation]
 
 上一篇 [文章](http://fatelei.github.io/2015/09/01/Css-background-position/) 中讲到了 `background-position` 在 `Css sprite` 中的使用，这篇文章主要讲怎么用 `background-position` 来做动画。其实动画都是一帧一帧的做出来的，每一帧就是就是一个画面。通常图片在人眼中存在的时间为 1/24 秒，如果画面播放的速度超过了人眼可以分辨的速度，那么人眼所看到的画面就动起来了。
 
+<!-- more -->
+
  有这样一张背景图：
 
 ![monster](/images/monster.png)
@@ -48,4 +50,4 @@ tags: [CSS, Animation]
 
 实际效果可以到这里查看 [动画](https://jsfiddle.net/fatelei/j47609b1/embedded/result/)。
 
-[刘看山小站的动画实现](https://jsfiddle.net/fatelei/hgqmh6q1/embedded/result/)，原版的在[这里](https://liukanshan.zhihu.com)
+最后附赠一个：[刘看山小站的动画实现](https://jsfiddle.net/fatelei/hgqmh6q1/embedded/result/)，原版的在 [这里](https://liukanshan.zhihu.com)
