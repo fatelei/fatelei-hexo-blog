@@ -50,4 +50,4 @@ tags: [CSS, Animation]
 
 实际效果可以到这里查看 [动画](https://jsfiddle.net/fatelei/j47609b1/embedded/result/)。
 
-最后附赠一个：[刘看山小站的动画实现](https://jsfiddle.net/fatelei/hgqmh6q1/embedded/result/)，原版的在 [这里](https://liukanshan.zhihu.com)
+最后附赠一个：[刘看山小站的动画实现](https://jsfiddle.net/fatelei/hgqmh6q1/1/embedded/result/)，原版的在 [这里](https://liukanshan.zhihu.com)
