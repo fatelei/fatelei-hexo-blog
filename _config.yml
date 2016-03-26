@@ -7,8 +7,13 @@ title: 在这里留下心情
 subtitle:
 description:
 author: 王小磊
-language:
+language: default
 timezone:
+
+menu:
+  home: /
+  archives: /archives
+  tags: /tags
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,6 +68,8 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 theme: next
+
+disqus_shortname: fatelei
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
