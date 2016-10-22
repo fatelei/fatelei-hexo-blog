@@ -1,6 +1,6 @@
 title: Cassandra cluster rolling update.
 date: 2016-10-22 21:49:26
-tags:
+tags: [cassandra]
 ---
 
 最初部署 cassandra 时，采用 cassandra 的 2.2.1 版本，但是在实际使用中遇到了，如下 BUG：
