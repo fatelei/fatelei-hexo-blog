@@ -20,41 +20,33 @@ tags: [cassandra]
 
 ## 升级步骤
 
-1. 升级某个节点的 cassandra 版本时，需要先执行
+- A. 升级某个节点的 cassandra 版本时，需要先执行
 
-```
-nodetool drain
-```
+`nodetool drain`
 
 该命令表示该节点不再接受写的请求，并将 memtable 进行 flush 到磁盘；
 
-2. 进行数据的备份，可以使用
+- B. 进行数据的备份，可以使用
 
-```
-nodetool snapshot
-```
+`nodetool snapshot`
 
 进行 keyspace 的快照。由于目前所在的公司使用的是 AWS，这里没有使用 cassandra 自己提供的工具进行快照，而是使用的 AWS 提供的工具，对整块 EBS 进行的快照。
 
-3. 数据备份完之后，stop cassandra 进程，可以用
+- C. 数据备份完之后，stop cassandra 进程，可以用
 
-```
-cassandra_install_location/bin/stop-server
-```
+`cassandra_install_location/bin/stop-server`
 
 停止掉服务
 
-4. 将老版本的中必要的配置，拷贝到新版本的目录中，比如：cassandra.yml
+- D. 将老版本的中必要的配置，拷贝到新版本的目录中，比如：cassandra.yml
 
-5. 以上完成之后，便可以直接启动新版本的 cassandra 啦，然后观察一下 cassandra 服务日志，如果没有问题，那就大功告成啦。注意，如果你升级的是主版本（1.x - 2.x）或者主版本下的一个大版本（2.1 - 2.2），在启动 cassandra 之后，还需要执行
+- E. 以上完成之后，便可以直接启动新版本的 cassandra 啦，然后观察一下 cassandra 服务日志，如果没有问题，那就大功告成啦。注意，如果你升级的是主版本（1.x - 2.x）或者主版本下的一个大版本（2.1 - 2.2），在启动 cassandra 之后，还需要执行
 
-```
-nodetool upgradesstables
-```
+`nodetool upgradesstables
 
-6. 然后再各个节点重复 1 - 5 的步骤。
+- F. 然后再各个节点重复 `A` - `E` 的步骤。
 
-7. 升级完之后，需要重启你的应用。
+- G. 升级完之后，需要重启你的应用。
 
 是不是很简单呢……
 
