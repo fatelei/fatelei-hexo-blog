@@ -23,11 +23,11 @@ co(function *() {
 
 ### 函数在 `co` 中执行的整体流程图如下
 
-![co 整体执行流程](../images/co_global.png)
+![co 整体执行流程](/images/co_global.png)
 
 核心部分就是 `co` 中，返回 `Promise` 实例中，其整体执行的流程如下：
 
-![co promise process](../images/co_promise_call.png)
+![co promise process](/images/co_promise_call.png)
 
 1. 判断传入 `co` 中的 `gen` 是否为函数，如果是函数，则绑定当前的上下文到 `gen` 中，并传入 `gen` 所需要的参数，代码如下：
 
@@ -45,7 +45,7 @@ if (!gen || typeof gen.next !== 'function') return resolve(gen);
 
 ### `co` 中核心部分的 `onFulfilled` 的执行流程
 
-![co onFulfilled](../images/co_onfullfill.png)
+![co onFulfilled](/images/co_onfullfill.png)
 
 1. 首先执行 `gen.next(res)` (`res` 在第一次执行时为 `undefined`)，如果执行出错，转入 `2`，如果成功执行，转入 `3`；
 2. 直接执行 `reject(e)`，并直接返回;
@@ -54,7 +54,7 @@ if (!gen || typeof gen.next !== 'function') return resolve(gen);
 
 ### `onFulfilled` 中核心部分是 `next(ret)`，其执行流程如下
 
-![co next](../images/co_next.png)
+![co next](/images/co_next.png)
 
 1. 如果在 `co` 中执行的是 `Generator`， 并且其已经执行完 `res.done` 为 `true`，直接将 `resolve(res.value)`，否则进入 `2`；
 2. 通过调用函数 `toPromise`，将 `res.value` 转换为 `Promise`，然后进入 `3`；
